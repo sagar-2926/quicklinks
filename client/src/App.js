@@ -1,12 +1,25 @@
 import React, { useState } from 'react'
 import './App.css'
 import copyIcon from './icons8-copy-24.png'
+import showToast from 'crunchy-toast';
+import axios from 'axios'
 function App() {
 
   const [url, setUrl] = useState('')
   const [slug, setSlug] = useState('')
   const [shortUrl, setShortUrl] = useState('')
 
+  const  genratelink = async () => {
+    const response = await axios.post('/link' ,{
+    url,
+    slug
+    })
+    setShortUrl(response?.data?.data?.shortUrl)
+  }
+  const copyShortUrl = ()=>{
+    navigator.clipboard.writeText(shortUrl);
+    showToast('copy to clickboard', 'success', 2000);
+  }
 
 
   return (
@@ -39,10 +52,17 @@ function App() {
             value={shortUrl}
             disabled
              />
-             <img src={copyIcon} alt="Image" className='copy-icon' />
+             <img src={copyIcon} alt="Image" className='copy-icon' 
+             
+             onClick={copyShortUrl}
+             
+             />
 
             </div>
-            <button type='button' className="btn-link-genrate">Do Magik 🪄</button>
+            <button type='button' className="btn-link-genrate"
+            onClick={genratelink}
+            
+            >Do Magik 🪄</button>
 
         </div>
         <div>

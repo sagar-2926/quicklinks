@@ -30,7 +30,7 @@ const randomSlug = Math.random().toString(36).substring(2,7);
         return res.json({
             success : true,
             data: {
-                shortLinks:`${process.env.BASE_URL}/${savedLink.slug}`
+                shortUrl:`${process.env.BASE_URL}/${savedLink.slug}`
             },
             message:"Link saved successfully"
         })
