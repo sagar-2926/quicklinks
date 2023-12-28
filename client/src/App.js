@@ -52,10 +52,8 @@ function App() {
             value={shortUrl}
             disabled
              />
-             <img src={copyIcon} alt="Image" className='copy-icon' 
-             
+             <img src={copyIcon} alt="Image" className='copy-icon'
              onClick={copyShortUrl}
-             
              />
 
             </div>
