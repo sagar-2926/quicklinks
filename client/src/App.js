@@ -34,7 +34,10 @@ function App() {
    
   return (
     <div>
-      <h1 className='main-container'>Quick Links</h1>
+      <div className="main-container">
+      <h1 className='heading'>Quick Links 📝</h1>
+      </div>
+  
       <div className='app-container'>
         <div className='link-genration-card'>
           <h2>Link Genaration</h2>
@@ -74,19 +77,34 @@ function App() {
 
         </div>
         <div className='all-links-container'>
-          
+        <p className="all-links">All Links</p>
           {
             links.map((linkojb, index)=>{
               const {url, slug, clicks} = linkojb;
               return(
+                <>
                 <div className='all-links-card'>
                 <p className='card-url'> <b>URL :</b> {url}</p>
                 <p className='card-slug'><b>Short URL : </b>{process.env.REACT_APP_BASE_URL}/{slug}</p>
                 <p className='card-clicks'>Clicks :{clicks}</p>
                 </div>
+                </>
               )
             })
           }
+          {/* {
+            links?.map((linkObj, index)=>{
+              const {url, slug, clicks } = linkObj;
+
+              return(
+                <div>
+                 <p> URL: {url}</p>
+                 <p> ShortUrl : {slug}</p>
+                 <p> Clicks : {clicks}</p>
+                </div>
+              )
+            })
+          } */}
         </div>
       </div>
 
