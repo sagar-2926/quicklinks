@@ -3,13 +3,16 @@ text-align: center;
 }
 .app-container{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: row;
+  
 }
 .link-genration-card{
   background-color:#fff;
   border-radius: 10px;
   padding: 10px;
+  height: 370px;
+  width: 350px;
+  margin-right: 120px;
   box-shadow: 0 0 10px rgba(0,0,0,0,2);
 }
 .user-input{
@@ -48,5 +51,32 @@ text-align: center;
   height: 30px;
   width: 30px;
   color: #000;
+  cursor: pointer;
+}
+
+
+.all-links-card{
+  height: 100px;
+  width: 450px;
+  margin: 35px;
+  background-color: white;
+  padding: 10px;
+  box-shadow:1px 2px 10px 2px #000;
+}
+
+.all-links-container{
+  height: 390px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: 1px;
+}
+.all-links-container::-webkit-scrollbar{
+  display: none;
+}
+.card-clicks{
+  font-weight: bold;
+  font-size: 18px;
+}
+.card-slug{
   cursor: pointer;
 }
