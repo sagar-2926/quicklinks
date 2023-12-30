@@ -87,19 +87,6 @@ function App() {
               )
             })
           }
-          {/* {
-            links?.map((linkObj, index)=>{
-              const {url, slug, clicks } = linkObj;
-
-              return(
-                <div>
-                 <p> URL: {url}</p>
-                 <p> ShortUrl : {slug}</p>
-                 <p> Clicks : {clicks}</p>
-                </div>
-              )
-            })
-          } */}
         </div>
       </div>
 
