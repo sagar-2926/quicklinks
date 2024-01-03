@@ -75,6 +75,15 @@ app.get('/api/links',async(req,res)=>{
     })
 })
 
+app.delete('/link/delete',async(req,res)=>{
+    const link = await link.deleteOne();
+    res.json({
+        success:true,
+        data:link,
+        message:'Link delete successfully'
+    })
+});
+
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static(path.join(__dirname,'..','client','build')));
 

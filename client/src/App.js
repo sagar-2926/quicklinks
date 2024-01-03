@@ -31,7 +31,7 @@ function App() {
   useEffect(() =>{
     loadlinks();
   } , [links])
-   
+ 
   return (
     <div>
       <div className="main-container">
@@ -40,7 +40,7 @@ function App() {
   
       <div className='app-container'>
         <div className='link-genration-card'>
-          <h2>Link Genaration</h2>
+          <h2 className="all-links1">Link Genaration</h2>
 
           <input type='text'
             className='user-input'
@@ -87,24 +87,13 @@ function App() {
                 <p className='card-url'> <b>URL :</b> {url}</p>
                 <p className='card-slug'><b>Short URL : </b>{process.env.REACT_APP_BASE_URL}/{slug}</p>
                 <p className='card-clicks'>Clicks :{clicks}</p>
+                <p className='card-delete'>Delete ❌</p>
                 </div>
                 </>
               )
             })
           }
-          {/* {
-            links?.map((linkObj, index)=>{
-              const {url, slug, clicks } = linkObj;
-
-              return(
-                <div>
-                 <p> URL: {url}</p>
-                 <p> ShortUrl : {slug}</p>
-                 <p> Clicks : {clicks}</p>
-                </div>
-              )
-            })
-          } */}
+         
         </div>
       </div>
 
